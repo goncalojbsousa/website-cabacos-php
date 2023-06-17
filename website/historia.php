@@ -11,7 +11,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			Historia de Cabaços
 		</h1>
 		<div class="wrap texto-conteudo">
-			<img class="imgcontent" src="img/cabacos_imagemTeste1.jpg" alt="Foto de Cabaços">
+			<img class="imgcontent" src="/recursos/img/cabacos_imagemTeste1.jpg" alt="Foto de Cabaços">
 			<p>
 				Cabaços, situada entre o monte da Nó e o de S. Veríssimo, dista cerca de treze quilómetros da sede do concelho. É composta pelos seguintes lugares principais: Barrosas, Calmario, Carvalhal, Chão, Codessido, Correndelos, Fervenças, Gaioso, Lamas, Mouro, Outeiro, Pedreira, Penelas, Pomarada, Pomarelho, Rua Nova, Soutelo, Tresmonde e Vilela.
 				<br>Reza a tradição que a pouco mais de um quilómetro do centro da povoação existiu um convento de monges beneditinos, que foi totalmente arrasado pelos mouros em 718. Ficava situado no lugar chamado Bouça Longa e os frades eram conhecidos pela denominação de frades longos.
@@ -64,12 +64,9 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 				</tbody>
 			</table>
 		</div>
-		<section class="footer">
-			<p>© 2023 Junta de Freguesia de Cabaços. Todos os direitos reservados<br>Tel/Fax: 258768310 | Email: geral@cabacosefojolobal.pt<br>Desenvolvido por: Gonçalo Sousa</p>
-		</section>
 	</content>
 
 <?php
 # CARREGA O RODAPE GERAL
-require_once __DIR__ . '/website/templates/rodape_geral.php';
+require_once __DIR__ . '/templates/rodape_geral.php';
 ?>

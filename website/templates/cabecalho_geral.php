@@ -22,7 +22,7 @@
 				</svg>
 			</button>
 			<div class="logo_header">
-				<a href="index.html"><img src="/recursos/img/logo.png" class="img_logo" alt="Brasão da freguesia de cabaços"></a>
+				<a href="../index.php"><img src="/recursos/img/logo.png" class="img_logo" alt="Brasão da freguesia de cabaços"></a>
 			</div>
 			<ul class="navigation_header" id="navigation_header">
 				<button onclick="toggleSidebar()" class="btn_iconHeader">
@@ -37,15 +37,14 @@
 						Freguesia
 					</button>
 					<ul class="dropdown-menu dropdown-menu-dark">
-						<li><a class="dropdown-item" href="historia.html">História</a></li>
-						<li><a class="dropdown-item" href="noticias.html">Noticias</a></li>
-						<li><a class="dropdown-item" href="ondecomer.html">Onde Comer</a></li>
+						<li><a class="dropdown-item" href="/website/historia.php">História</a></li>
+						<li><a class="dropdown-item" href="/website/noticias.php">Noticias</a></li>
+						<li><a class="dropdown-item" href="/website/ondecomer.php">Onde Comer</a></li>
 						<li><a class="dropdown-item" href="/website/paroquia.php">Paróquia</a></li>
-						<li><a class="dropdown-item" href="executivo.html">Executivo</a></li>
+						<li><a class="dropdown-item" href="/website/executivo.php">Executivo</a></li>
 					</ul>
 				</li>
-                <a href="/website/paroquia.php"><button type="button" class="btn btn-outline-light">Paróquia</button></a>
-				<a href="formulario.html"><button type="button" class="btn btn-outline-light">Pedidos</button></a>
+				<a href="/website/formulario.php"><button type="button" class="btn btn-outline-light">Pedidos</button></a>
 			</ul>
 		</div>
 	</header>

@@ -13,7 +13,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 
 		<div class="wrapper">
 			<div class="text-box textnews" id="irs">
-				<img class="img_news" src="img/news/irs22.jpg" alt="imagem sobre a noticia">
+				<img class="img_news" src="/recursos/img/news/irs22.jpg" alt="imagem sobre a noticia">
 				<h2>Entrega IRS 2022</h2>
 				<p class="textnews">A entrega do IRS em 2023, relativo aos rendimentos do ano 2022, é realizada no período compreendido entre o dia 1 de abril e o dia 30 de junho, independentemente da categoria de rendimentos.
 					Estão dispensados de entregar IRS os contribuintes que tenham recebido rendimentos de trabalho dependente ou pensões até 8.500 euros durante o ano de 2022.
@@ -22,7 +22,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			</div>
 			<hr>
 			<div class="text-box textnews" id="etap">
-				<img class="img_news" src="img/news/etap.png" alt="imagem sobre a noticia">
+				<img class="img_news" src="/recursos/img/news/etap.png" alt="imagem sobre a noticia">
 				<h2>Centro Qualifica da COOPETAPE/ETAP</h2>
 				<p class="textnews">
 					A COOPETAPE/ETAP Escola Profissional tem em funcionamento um Centro Qualifica com sede em Ponte de Lima para a Certificação Escolar (Ensino Básico e Ensino Secundário) e para a Certificação Profissional de nível 2 e nível 4, nas áreas formativas da sua competência e onde, historicamente, tem acrescentado valor à economia, empresas e pessoas através da formação que ministra.
@@ -44,7 +44,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			</div>
 			<hr>
 			<div class="text-box textnews" id="fpf">
-				<img class="img_news" src="img/news/fpf_small.png" alt="imagem sobre a noticia">
+				<img class="img_news" src="/recursos/img/news/fpf_small.png" alt="imagem sobre a noticia">
 				<h2>Formação profissional financiada</h2>
 				<p class="textnews">
 					A Junta de Freguesia de Cabaços e Fojo Lobal pretende levar a cabo 3 Formações Modulares Certificadas. Realizadas no edifício da Junta de Freguesia, em Cabaços, a estas formações serão atribuídas um certificado de qualificação bem como um subsídio de alimentação, de 4,77€ / dia.
@@ -54,7 +54,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			</div>	
 			<hr>
 			<div class="text-box textnews" id="aulas">
-				<img class="img_news" src="img/news/aulas_small.png" alt="imagem sobre a noticia">
+				<img class="img_news" src="/recursos/img/news/aulas_small.png" alt="imagem sobre a noticia">
 				<h2 >Aulas de ginástica para a população sénior</h2>
 				<p class="textnews">
 					A Junta de Freguesia de Cabaços e Fojo Lobal informa que irão iniciar em Cabaços, aulas de atividade física gratuitas para a população sénior. As aulas irão decorrer às segundas e quartas-feiras às 09:15h, no Edifício da Junta de Freguesia. Têm inicio no dia 2 de Novembro e serão gratuitas, com o apoio da Junta de Freguesia. Destinam- se a todas as pessoas da freguesia com mais de 50 anos e reformadas.
@@ -64,19 +64,16 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			</div>
 			<hr>
 			<div class="text-box textnews">
-				<img class="img_news" src="img/news/evento_small.png" alt="imagem sobre a noticia">
+				<img class="img_news" src="/recursos/img/news/evento_small.png" alt="imagem sobre a noticia">
 				<h2>Evento Caetano Auto Rally Experience Ponte de Lima - Restrições ao trânsito</h2>
 				<p class="textnews">
 					A Junta de Freguesia de Cabaços e Fojo Lobal informa que nos dias 30 de setembro, 1 e 2 de outubro de 2022 devido a realização do evento Caetano Auto Rally Experience Ponte de Lima na nossa freguesia, irão haver restrições ao trânsito na Rua de Além das 9h00 às 13h00 e de 14h00 às 18h00. Durante este horário a rua vai estar cortada ao trânsito pelas autoridades, desta forma aconselhamos a quem necessite circular nesta via que tente encontrar alternativa.
 				</p>
 			</div>
 		</div>
-		<section class="footer">
-			<p>© 2023 Junta de Freguesia de Cabaços. Todos os direitos reservados<br>Tel/Fax: 258768310 | Email: geral@cabacosefojolobal.pt<br>Desenvolvido por: Gonçalo Sousa</p>
-		</section>
 	</content>
 
 <?php
 # CARREGA O RODAPE GERAL
-require_once __DIR__ . '/website/templates/rodape_geral.php';
+require_once __DIR__ . '/templates/rodape_geral.php';
 ?>

@@ -22,5 +22,5 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 
 <?php
 # CARREGA O RODAPE GERAL
-require_once __DIR__ . '/website/templates/rodape_geral.php';
+require_once __DIR__ . '/templates/rodape_geral.php';
 ?>

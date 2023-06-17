@@ -12,7 +12,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			Pizzaria VIP II
 		</h1>
 		<div class="wrap texto-conteudo centrar">
-			<img class="imgcontent" src="img/pizzaria.jpg" alt="Foto de uma pizza">
+			<img class="imgcontent" src="/recursos/img/pizzaria.jpg" alt="Foto de uma pizza">
 			<p>
 				Venha conhecer a melhor e unica pizzaria de Cabaços!<br>
 				Os melhores pratos aos melhores preços.<br><br>
@@ -30,5 +30,5 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 	
 <?php
 # CARREGA O RODAPE GERAL
-require_once __DIR__ . '/website/templates/rodape_geral.php';
+require_once __DIR__ . '/templates/rodape_geral.php';
 ?>
