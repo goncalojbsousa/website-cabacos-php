@@ -18,7 +18,6 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			</form>
 		</div>
 	</content>
-	<script src="js/script.js"></script>
 
 <?php
 # CARREGA O RODAPE GERAL

@@ -17,8 +17,8 @@ require_once __DIR__ . '/templates/cabecalho.php';
   <section class="py-4">
     <div class="d-flex justify-content">
       <a href="/admin/utilizador.php"><button class="btn btn-success px-4 me-2">Criar Utilizador</button></a>
-      <a href="/aplicacao/"><button class="btn btn-info px-2 me-2">Sair Administração</button></a>
-      <form action="/src/controlador/aplicacao/controlar-autenticacao.php" method="post">
+      <a href="/website/"><button class="btn btn-info px-2 me-2">Sair Administração</button></a>
+      <form action="/src/controlador/website/controlar-autenticacao.php" method="post">
         <button class="btn btn-danger px-4" type="submit" name="utilizador" value="logout">Fazer Logout</button>
       </form>
     </div>
