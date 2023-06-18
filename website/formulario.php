@@ -8,7 +8,7 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 	<!--conteudo da pagina-->
 	<content tabindex="0" onclick="closeSidebar()" id="content">
 		<div class="container">
-			<form onsubmit="sendEmail(); reset(); return false;">
+			<form class="form" onsubmit="sendEmail(); reset(); return false;">
 				<h3>Formulario de pedido</h3>
 				<input type="text" id="name" placeholder="Seu nome" required>
 				<input type="email" id="email" placeholder="Insira o seu e-mail" required>

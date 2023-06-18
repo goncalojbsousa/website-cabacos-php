@@ -30,11 +30,11 @@ echo 'Tabela utilizadores criada!' . PHP_EOL;
 
 # ABAIXO UM ARRAY SIMULANDO A DADOS DE UM UTILIZADOR 
 $utilizador = [
-    'nome' => 'Wenderson',
-    'apelido' => 'Wanzeller',
-    'nif' => '294733167',
-    'telemovel' => '917315200',
-    'email' => 'wendersonwanzeller@estg.ipvc.pt',
+    'nome' => 'Gonçalo',
+    'apelido' => 'Sousa',
+    'nif' => '253213452',
+    'telemovel' => '933143333',
+    'email' => 'goncalosousa@ipvc.pt',
     'foto' => null,
     'administrador' => true,
     'dono' => true,
@@ -85,3 +85,4 @@ $sucesso = $PDOStatement->execute([
 ]);
 
 echo 'Utilizador padrão criado!';
+?>

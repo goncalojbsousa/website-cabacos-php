@@ -5,7 +5,6 @@ require_once __DIR__ . '/website/templates/cabecalho_geral.php';
 ?>
 
 	<content tabindex="0" onclick="closeSidebar()" id="content">
-
 		<!--Slide de imagens        -->
 		<div id="carouselExampleCaptions" class="carousel slide">
 			<div class="carousel-indicators">

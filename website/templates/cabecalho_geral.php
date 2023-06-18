@@ -1,3 +1,12 @@
+<?php
+# ACESSA DE FUNÇÕES AUXILIADORAS. 
+# NOTA: O SIMBOLO ARROBA SERVE PARA NÃO MOSTRAR MENSAGEM DE WARNING, POIS A FUNÇÃO ABAIXO TAMBÉM INICIA SESSÕES
+@require_once __DIR__ . '/../../src/auxiliadores/auxiliador.php';
+
+# PROVENIENTE DE FUNÇÕES AUXILIADORAS. CARREGA O UTILIZADOR ATUAL
+$utilizador = utilizador();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +54,20 @@
 					</ul>
 				</li>
 				<a href="/website/formulario.php"><button type="button" class="btn btn-outline-light">Pedidos</button></a>
-				<a href="/website/login.php"><button type="button" class="btn btn-outline-light">Login</button></a>
+				<?php
+					if (!autenticado()) {
+						echo '<div>
+							<a href="/website/login.php"><button type="button" class="btn btn-outline-success">Login</button></a>
+						</div>';
+					}
+					if (autenticado()) {
+						echo '<div>
+							<form action="/src/controlador/website/controlar-autenticacao.php" method="post">
+									<button class="btn btn-outline-danger" type="submit" name="utilizador" value="logout">Logout</button>
+							</form>
+						</div>';
+					}
+				?>
 			</ul>
 		</div>
 	</header>
