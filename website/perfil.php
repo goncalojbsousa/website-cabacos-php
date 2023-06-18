@@ -12,13 +12,13 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
 $utilizador = utilizador();
 ?>
 
-<body class="container bg-light">
+<body class=" bg-light">
   <div class="pt-1 ">
     <div class="p-5 mb-2 bg-info text-white">
       <h1>Registo de Utilizadores</h1>
       <p>CRUD | Front-end Bootstrap | Back-end PHP</p>
     </div>
-    <main class="bg-light">
+    <main>
       <section class="py-4">
         <div class="d-flex justify-content">
           <a href="/website/"><button type="button" class="btn btn-secondary px-5 me-2">Voltar</button></a>

@@ -8,7 +8,7 @@ $utilizador = utilizador();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 	<meta charset="UTF-8">
@@ -58,26 +58,29 @@ $utilizador = utilizador();
 					if (!autenticado()) {
 						echo '<div>
 							<a href="/website/login.php"><button type="button" class="btn btn-outline-success">Login</button></a>
+						</div>
+						<div>
+							<a href="/website/registo.php"><button class="btn btn-outline-primary">Registo</button></a>
 						</div>';
 					}
 					if (autenticado()) {
 						echo '<div>
-							<form action="/src/controlador/website/controlar-autenticacao.php" method="post">
-									<button class="btn btn-outline-danger" type="submit" name="utilizador" value="logout">Logout</button>
-							</form>
-
 							<li class="nav-item dropdown">
 								<button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-									Freguesia
+									Perfil
 								</button>
-					<ul class="dropdown-menu dropdown-menu-dark">
-						<li><a class="dropdown-item" href="/website/historia.php">História</a></li>
-						<li><a class="dropdown-item" href="/website/noticias.php">Noticias</a></li>
-						<li><a class="dropdown-item" href="/website/ondecomer.php">Onde Comer</a></li>
-						<li><a class="dropdown-item" href="/website/paroquia.php">Paróquia</a></li>
-						<li><a class="dropdown-item" href="/website/executivo.php">Executivo</a></li>
-					</ul>
-				</li>
+								<ul class="dropdown-menu dropdown-menu-dark">
+									<li><a href="/website/perfil.php"><button class="dropdown-item" type="button">Editar perfil</button></a></li>
+									<form action="/src/controlador/website/controlar-autenticacao.php" method="post">
+										<button class="dropdown-item" type="submit" name="utilizador" value="logout">Logout</button>
+									</form>
+								</ul>
+							</li>
+						</div>';
+					}
+					if (autenticado() && $utilizador['administrador']) {
+						echo '<div>
+							<a href="/admin/"><button class="btn btn-outline-success" type="button">Administração</button></a>
 						</div>';
 					}
 				?>

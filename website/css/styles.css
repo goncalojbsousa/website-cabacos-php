@@ -247,11 +247,10 @@ ul{
   width: 100%;
   min-height: 100px;
   padding: 20px 80px;
-  margin: 0;
+  margin-top: 50px;
   background-color: rgb(32, 32, 32);
   box-shadow: 1px 1px 4px rgb(32, 32, 32); 
   text-align: center;
-  margin-top: auto;
 }
 
 .footer p {

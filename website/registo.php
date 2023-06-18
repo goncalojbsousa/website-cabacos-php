@@ -7,7 +7,7 @@ $titulo = '- Registro';
 include_once __DIR__ . '/templates/cabecalho_geral.php';
 ?>
 
-<body class="container vh-100 d-flex align-items-center justify-content-center text-center bg-light">
+<body>
   <div class="w-75">
     <main>
       <section>
@@ -29,7 +29,7 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
         }
         ?>
       </section>
-      <form action="/src/controlador/website/controlar-registo.php" method="post">
+      <form class="form" action="/src/controlador/website/controlar-registo.php" method="post">
         <h1 class="h3 mb-3 fw-normal">REGISTRO CRUD PHP</h1>
         <div class="form-floating mb-2">
           <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
