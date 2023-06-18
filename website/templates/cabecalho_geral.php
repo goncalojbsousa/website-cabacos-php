@@ -65,6 +65,19 @@ $utilizador = utilizador();
 							<form action="/src/controlador/website/controlar-autenticacao.php" method="post">
 									<button class="btn btn-outline-danger" type="submit" name="utilizador" value="logout">Logout</button>
 							</form>
+
+							<li class="nav-item dropdown">
+								<button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+									Freguesia
+								</button>
+					<ul class="dropdown-menu dropdown-menu-dark">
+						<li><a class="dropdown-item" href="/website/historia.php">História</a></li>
+						<li><a class="dropdown-item" href="/website/noticias.php">Noticias</a></li>
+						<li><a class="dropdown-item" href="/website/ondecomer.php">Onde Comer</a></li>
+						<li><a class="dropdown-item" href="/website/paroquia.php">Paróquia</a></li>
+						<li><a class="dropdown-item" href="/website/executivo.php">Executivo</a></li>
+					</ul>
+				</li>
 						</div>';
 					}
 				?>
