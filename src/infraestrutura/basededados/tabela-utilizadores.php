@@ -85,4 +85,3 @@ $sucesso = $PDOStatement->execute([
 ]);
 
 echo 'Utilizador padrão criado!';
-?>

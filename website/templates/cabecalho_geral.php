@@ -67,7 +67,7 @@ $utilizador = utilizador();
 						echo '<div>
 							<li class="nav-item dropdown">
 								<button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-									Perfil
+									' .  $utilizador['nome'] . '
 								</button>
 								<ul class="dropdown-menu dropdown-menu-dark">
 									<li><a href="/website/perfil.php"><button class="dropdown-item" type="button">Editar perfil</button></a></li>
@@ -80,7 +80,15 @@ $utilizador = utilizador();
 					}
 					if (autenticado() && $utilizador['administrador']) {
 						echo '<div>
-							<a href="/admin/"><button class="btn btn-outline-success" type="button">Administração</button></a>
+						<li class="nav-item dropdown">
+						<button class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Administração
+						</button>
+						<ul class="dropdown-menu dropdown-menu-dark">
+							<li><a href="/admin/"><button class="dropdown-item" type="button">Gestão de Utilizadores</button></a></li>
+							<li><a href="/admin/index2.php"><button class="dropdown-item" type="button">Gestão de Noticias</button></a></li>
+						</ul>
+					</li>
 						</div>';
 					}
 				?>

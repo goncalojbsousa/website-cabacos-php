@@ -1,6 +1,8 @@
 <?php
 # CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES AUTENTICADOS ACESSEM ESTE SITIO
-require_once('./src/middleware/middleware-utilizador.php');
+# require_once('\..\src\middleware\middleware-utilizador.php');
+require_once(realpath(dirname(__FILE__) . '\..\src\middleware\middleware-utilizador.php'));
+
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
 $titulo = ' - Altarar Palavra Passe';
@@ -14,7 +16,7 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
 $utilizador = utilizador();
 ?>
 
-<body class="container bg-light">
+<body>
   <div class="pt-1 ">
     <div class="p-5 mb-2 bg-info text-white">
       <h1>Registo de Utilizadores</h1>
