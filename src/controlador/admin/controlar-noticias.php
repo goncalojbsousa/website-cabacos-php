@@ -192,41 +192,22 @@ function deletar($noticia)
  */
 function guardaFoto($dados, $fotoAntiga = null)
 {
-    # UTILIZA VARIÁVEL GLOBAL PARA PEGAR O NOME DO FICHEIRO
     $nomeFicheiro = $_FILES['foto']['name'];
-
-    # PAGA O FICHEIRO TEMPORÁRIO
     $ficheiroTemporario = $_FILES['foto']['tmp_name'];
-
-    # PEGA TIPO DE EXTENSÃO DA FOTO
     $extensao = pathinfo($nomeFicheiro, PATHINFO_EXTENSION);
-
-    # CONVERTE A EXTENSÃO PARA MINÚSCULO
     $extensao = strtolower($extensao);
-
-    # CRIA UM NOME ÚNICO PARA O FICHEIRO
     $novoNome = uniqid('foto_') . '.' . $extensao;
 
-    # DEFINE O CAMINHO DO FICHEIRO
-    $caminhoFicheiro = __DIR__ . '/../../../recursos/img/news/uploads/';
+    $caminhoRelativo = '/recursos/img/news/uploads/';
+    $caminhoCompleto = $_SERVER['DOCUMENT_ROOT'] . $caminhoRelativo . $novoNome;
 
-    # DEFINE CAMINHO COMPLETO DO FICHEIRO
-    $ficheiro = $caminhoFicheiro . $novoNome;
+    if (move_uploaded_file($ficheiroTemporario, $caminhoCompleto)) {
+        $dados['foto'] = $caminhoRelativo . $novoNome;
 
-    # MOVE O FICHEIRO TEMPORÁRIO PARA O LOCAL DEFINITIVO
-    if (move_uploaded_file($ficheiroTemporario, $ficheiro)) {
-
-        # ATRIBUI NOME DO FICHEIRO NO ARRAY DE DADOS PARA ARMAZENAMENTO NA BASE DE DADOS
-        $dados['foto'] = $novoNome;
-
-        # APAGA FICHEIRO ANTERIOR, CASO SEJA UMA ATUALIZAÇÃO DE FOTO DE PERFIL
-        if (isset($dados['noticia']) && ($dados['noticia'] == 'atualizar') || ($dados['noticia'] == 'perfil')) {
-
-            # COMANDO PARA APAGAR O FICHEIRO
-            unlink($caminhoFicheiro . $fotoAntiga['foto']);
+        if (isset($dados['noticia']) && ($dados['noticia'] == 'atualizar' || $dados['noticia'] == 'perfil')) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . $fotoAntiga['foto']);
         }
     }
 
-    # RETORNA OS DADOS DO FICHEIRO PARA GARDAR NA BASE DE DADOS
     return $dados;
 }

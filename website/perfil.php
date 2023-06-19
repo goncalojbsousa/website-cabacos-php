@@ -12,15 +12,15 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
 $utilizador = utilizador();
 ?>
 
-<body class=" bg-light">
-  <div class="pt-1 ">
+<body class="">
+  <div class="pt-1">
     <div class="p-5 mb-2 bg-info text-white">
       <h1>Registo de Utilizadores</h1>
       <p>CRUD | Front-end Bootstrap | Back-end PHP</p>
     </div>
     <main>
       <section class="py-4">
-        <div class="d-flex justify-content">
+        <div class="d-flex justify-content-center">
           <a href="/website/"><button type="button" class="btn btn-secondary px-5 me-2">Voltar</button></a>
           <a href="/website/palavra-passe.php"><button class="btn btn-warning px-2 me-2">Alterar Palavra Passe</button></a>
         </div>
@@ -44,8 +44,8 @@ $utilizador = utilizador();
         }
         ?>
       </section>
-      <section>
-        <form enctype="multipart/form-data" action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form-control py-3">
+      <section class="container">
+        <form enctype="multipart/form-data" action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form2 form-control py-3">
           <div class="input-group mb-3">
             <span class="input-group-text">Nome</span>
             <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : $utilizador['nome'] ?>" required>
@@ -71,7 +71,7 @@ $utilizador = utilizador();
             <input accept="image/*" type="file" class="form-control" id="inputGroupFile01" name="foto" />
           </div>
           <div class="d-grid col-4 mx-auto">
-            <button class="w-100 btn btn-lg btn-success mb-2" type="submit" name="utilizador" value="perfil">Alterar</button>
+            <button class="" type="submit" name="utilizador" value="perfil">Alterar</button>
           </div>
         </form>
       </section>

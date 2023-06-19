@@ -31,7 +31,14 @@ $utilizador = utilizador();
 				</svg>
 			</button>
 			<div class="logo_header">
-				<a href="../index.php"><img src="/recursos/img/logo.png" class="img_logo" alt="Brasão da freguesia de cabaços"></a>
+			<?php
+				if (!autenticado()) {
+						echo '<a href="../index.php"><img src="/recursos/img/logo.png" class="img_logo" alt="Brasão da freguesia de cabaços"></a>';
+					}
+				if (autenticado()) {
+					echo '<a href="/website/"><img src="/recursos/img/logo.png" class="img_logo" alt="Brasão da freguesia de cabaços"></a>';
+				}
+			?>
 			</div>
 			<ul class="navigation_header" id="navigation_header">
 				<button onclick="toggleSidebar()" class="btn_iconHeader">
@@ -39,22 +46,30 @@ $utilizador = utilizador();
 						<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 					</svg>
 				</button>
-				<a href="../index.php"><button type="button" class="btn btn-outline-light">Início</button></a>
-				<!--botão com varias opcões-->
-				<li class="nav-item dropdown">
-					<button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-						Freguesia
-					</button>
-					<ul class="dropdown-menu dropdown-menu-dark">
-						<li><a class="dropdown-item" href="/website/historia.php">História</a></li>
-						<li><a class="dropdown-item" href="/website/noticias.php">Noticias</a></li>
-						<li><a class="dropdown-item" href="/website/ondecomer.php">Onde Comer</a></li>
-						<li><a class="dropdown-item" href="/website/paroquia.php">Paróquia</a></li>
-						<li><a class="dropdown-item" href="/website/executivo.php">Executivo</a></li>
-					</ul>
-				</li>
-				<a href="/website/formulario.php"><button type="button" class="btn btn-outline-light">Pedidos</button></a>
+				
 				<?php
+				if (!autenticado()) {
+					echo '<a href=/index.php/><button type="button" class="btn btn-outline-light">Início</button></a>';
+				}
+				
+				if (autenticado()) {
+					echo '
+						<a href="/website/"><button type="button" class="btn btn-outline-light">Início</button></a>
+						<!--botão com varias opcões-->
+						<li class="nav-item dropdown">
+							<button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+								Freguesia
+							</button>
+							<ul class="dropdown-menu dropdown-menu-dark">
+								<li><a class="dropdown-item" href="/website/historia.php">História</a></li>
+								<li><a class="dropdown-item" href="/website/noticias.php">Noticias</a></li>
+								<li><a class="dropdown-item" href="/website/ondecomer.php">Onde Comer</a></li>
+								<li><a class="dropdown-item" href="/website/paroquia.php">Paróquia</a></li>
+								<li><a class="dropdown-item" href="/website/executivo.php">Executivo</a></li>
+							</ul>
+						</li>
+						<a href="/website/formulario.php"><button type="button" class="btn btn-outline-light">Pedidos</button></a>';
+				}			
 					if (!autenticado()) {
 						echo '<div>
 							<a href="/website/login.php"><button type="button" class="btn btn-outline-success">Login</button></a>

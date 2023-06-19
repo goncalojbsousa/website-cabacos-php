@@ -29,26 +29,28 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
         }
         ?>
       </section>
-      <form class="form" action="/src/controlador/website/controlar-registo.php" method="post">
-        <h1 class="h3 mb-3 fw-normal">REGISTRO CRUD PHP</h1>
-        <div class="form-floating mb-2">
-          <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
-          <label for="nome">Nome:</label>
-        </div>
-        <div class="form-floating mb-2">
-          <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="<?= isset($_REQUEST['email']) ? $_REQUEST['email'] : null ?>">
-          <label for="floatingInput">Endereço de Email:</label>
-        </div>
-        <div class="form-floating mb-2">
-          <input type="password" class="form-control" id="palavra_passe" name="palavra_passe" placeholder="Palavra passe">
-          <label for="palavra_passe">Palavra Passe:</label>
-        </div>
-        <div class="form-floating mb-2">
-          <input type="password" class="form-control" id="confirmar_palavra_passe" name="confirmar_palavra_passe" placeholder="Confirmar palavra passe">
-          <label for="confirmar_palavra_passe">Confirmar Palavra Passe:</label>
-        </div>
-        <button class="w-100 btn btn-lg btn-success mb-2" type="submit" name="utilizador" value="registo">Registar</button>
-      </form>
+      <div class="container">
+        <form class="form" action="/src/controlador/website/controlar-registo.php" method="post">
+          <h1 class="h3 mb-3 fw-normal">Registro</h1>
+          <div class="form-floating mb-2">
+            <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
+            <label for="nome">Nome:</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="<?= isset($_REQUEST['email']) ? $_REQUEST['email'] : null ?>">
+            <label for="floatingInput">Endereço de Email:</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="password" class="form-control" id="palavra_passe" name="palavra_passe" placeholder="Palavra passe">
+            <label for="palavra_passe">Palavra Passe:</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="password" class="form-control" id="confirmar_palavra_passe" name="confirmar_palavra_passe" placeholder="Confirmar palavra passe">
+            <label for="confirmar_palavra_passe">Confirmar Palavra Passe:</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-success mb-2" type="submit" name="utilizador" value="registo">Registar</button>
+        </form>
+      </div>
       <a href="/index.php"><button class="w-100 btn btn-lg btn-info">Voltar</button></a>
     </main>
     <?php

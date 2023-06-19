@@ -1,7 +1,14 @@
 <?php
+# INICIALIZA O REPOSITÓRIO DE NOTICIAS
+require_once __DIR__ . '/../src/infraestrutura/basededados/repositorio-noticias.php';
+
 # CARREGA O CABECALHO GERAL
 $titulo = ' - Noticias';
 require_once __DIR__ . '/templates/cabecalho_geral.php';
+
+#ORDENA POR NOTICIAS MAIS RECENBTES
+$sql = $pdo->query("SELECT * FROM noticias ORDER BY id DESC");
+$noticias = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <body>	
@@ -9,8 +16,20 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 		<h1 class="titulo">
 			Noticias mais recentes
 		</h1>
-		<!--conteudo da pagina-->
 
+		<div class="wrapper">
+			<?php foreach($noticias as $noticia): ?>
+				<div class="">
+					<?php echo '<img class="img_news" src="' . $noticia['foto'] . '" alt="" align="left" width="200" height="200">';?>
+					<h3><?= $noticia['titulo']; ?></h3>
+					<p><?= $noticia['texto']; ?></p>
+					<hr>
+				</div>
+			<?php endforeach; ?>
+		</div>		
+
+		<!--conteudo da pagina-->
+		<!--
 		<div class="wrapper">
 			<div class="text-box textnews" id="irs">
 				<img class="img_news" src="/recursos/img/news/irs22.jpg" alt="imagem sobre a noticia">
@@ -71,7 +90,8 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 				</p>
 			</div>
 		</div>
-	</content>
+		*/
+	</content>-->
 
 <?php
 # CARREGA O RODAPE GERAL

@@ -1,6 +1,5 @@
 <?php
 # CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES AUTENTICADOS ACESSEM ESTE SITIO
-# require_once('\..\src\middleware\middleware-utilizador.php');
 require_once(realpath(dirname(__FILE__) . '\..\src\middleware\middleware-utilizador.php'));
 
 

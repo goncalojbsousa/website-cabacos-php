@@ -1,4 +1,7 @@
 <?php
+# CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES AUTENTICADOS ACESSEM ESTE SITIO
+require_once __DIR__ . '/../src/middleware/middleware-utilizador.php';
+
 # CARREGA O CABECALHO GERAL
 $titulo = ' - Historia';
 require_once __DIR__ . '/templates/cabecalho_geral.php';

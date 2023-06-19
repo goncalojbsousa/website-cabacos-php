@@ -2,7 +2,7 @@
 # NOTA: O FORMULÁRIO NOTICIA ESTÁ SENDO USADO PARA CRIAÇÃO E ALTERAÇÃO DE NOTICIAS
 # PARA ISSO FUNCIONAR, EXISTE UM TRATAMENTO VIA GET/REQUEST ALTERANDO O VALOR DO BOTÃO DE NOME name="noticia" 
 
-# CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES ACESSE O SITIO
+# CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS ADMINISTRADORES ACESSE O SITIO
 require_once __DIR__ . '/../src/middleware/middleware-administrador.php';
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
@@ -38,11 +38,11 @@ require_once __DIR__ . '/templates/cabecalho.php';
     <form enctype="multipart/form-data" action="/src/controlador/admin/controlar-noticias.php" method="post" class="form-control py-3">
       <div class="input-group mb-3">
         <span class="input-group-text">Titulo</span>
-        <input type="text" class="form-control" name="titulo" maxlength="100" size="100" value="<?= isset($_REQUEST['titulo']) ? $_REQUEST['titulo'] : null ?>" required>
+        <input type="text" class="form-control" name="titulo" maxlength="255" size="255" value="<?= isset($_REQUEST['titulo']) ? $_REQUEST['titulo'] : null ?>" required>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text">Texto</span>
-        <input type="text" class="form-control" name="texto" maxlength="100" size="100" value="<?= isset($_REQUEST['texto']) ? $_REQUEST['texto'] : null ?>" required>
+        <input type="text" class="form-control" name="texto" maxlength="2000" size="2000" value="<?= isset($_REQUEST['texto']) ? $_REQUEST['texto'] : null ?>" required>
       </div>
       <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupFile01">Foto</label>

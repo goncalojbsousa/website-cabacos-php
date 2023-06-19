@@ -67,12 +67,6 @@
   margin-right: 15px;
 }
 
-.textnews{
-  padding: 30px;
-  padding-bottom: 0;
-  text-align:left;
-}
-
 /*linha de separação*/
 hr{
   border-color:#aaa;
@@ -117,6 +111,15 @@ ul{
   border-radius: 10px;
 }
 
+.form2{
+  background: #3b3b3b;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 90%;
+}
+
 .form h3{
   color: white;
   font-weight: 800;
@@ -132,7 +135,7 @@ ul{
   font-size: 16px;
 }
 
-.form button{
+.form button, .form2 button{
   padding: 15px;
   background: #27cf6d;
   color: #fff;

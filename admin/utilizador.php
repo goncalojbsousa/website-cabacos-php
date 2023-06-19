@@ -2,7 +2,7 @@
 # NOTA: O FORMULÁRIO UTILIZADOR ESTÁ SENDO USADO PARA CRIAÇÃO E ALTERAÇÃO DE UTILIZADORES
 # PARA ISSO FUNCIONAR, EXISTE UM TRATAMENTO VIA GET/REQUEST ALTERANDO O VALOR DO BOTÃO DE NOME name="utilizador" 
 
-# CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES ACESSE O SITIO
+# CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS ADMINISTRADORES ACESSE O SITIO
 require_once __DIR__ . '/../src/middleware/middleware-administrador.php';
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
@@ -37,11 +37,11 @@ require_once __DIR__ . '/templates/cabecalho.php';
     <form enctype="multipart/form-data" action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form-control py-3">
       <div class="input-group mb-3">
         <span class="input-group-text">Nome</span>
-        <input type="text" class="form-control" name="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
+        <input type="text" class="form-control" name="nome" maxlength="255" size="255" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text">Apelido</span>
-        <input type="text" class="form-control" name="apelido" maxlength="100" size="100" value="<?= isset($_REQUEST['apelido']) ? $_REQUEST['apelido'] : null ?>" required>
+        <input type="text" class="form-control" name="apelido" maxlength="255" size="255" value="<?= isset($_REQUEST['apelido']) ? $_REQUEST['apelido'] : null ?>" required>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text">NIF</span>
