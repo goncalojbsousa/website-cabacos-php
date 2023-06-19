@@ -16,15 +16,12 @@ $utilizador = utilizador();
 ?>
 
 <body>
-  <div class="pt-1 ">
-    <div class="p-5 mb-2 bg-info text-white">
-      <h1>Registo de Utilizadores</h1>
-      <p>CRUD | Front-end Bootstrap | Back-end PHP</p>
+  <div class="">
+    <div class="pt-4 mb-2 text-center text-white">
+      <h1>Alterar palavra-passe</h1>
+      <p>Altere a sua palavra-passe para uma do seu agrado.</p>
     </div>
-    <main class="bg-light">
-      <section class="py-4">
-        <a href="/website/perfil.php"><button type="button" class="btn btn-secondary px-5">Voltar</button></a>
-      </section>
+    <main>
       <section>
         <?php
         # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
@@ -44,8 +41,8 @@ $utilizador = utilizador();
         }
         ?>
       </section>
-      <section>
-        <form action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form-control py-3">
+      <section class="container">
+        <form action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form2 form-control py-3">
           <div class="input-group mb-3">
             <span class="input-group-text">Nome</span>
             <input type="text" readonly class="form-control" name="nome" placeholder="<?= $utilizador['nome'] ?>" value="<?= $utilizador['nome'] ?>">
@@ -63,6 +60,10 @@ $utilizador = utilizador();
           </div>
         </form>
       </section>
+      <section class="py-4 d-flex justify-content-center">
+        <a href="/website/perfil.php"><button type="button" class="btn btn-secondary px-5">Voltar</button></a>
+      </section>
+
     </main>
     <?php
     include_once __DIR__ . '/templates/rodape_geral.php';

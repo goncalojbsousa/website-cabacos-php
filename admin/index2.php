@@ -9,7 +9,7 @@ require_once __DIR__ . '/../src/middleware/middleware-administrador.php';
 $noticias = lerTodasNoticias();
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
-$titulo = ' - Painel de Administração';
+$titulo = ' - Noticias';
 require_once __DIR__ . '/templates/cabecalho.php';
 ?>
 

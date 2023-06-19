@@ -112,3 +112,19 @@ function deletarNoticia($id)
     # EXECUTA A CONSULTA E RETORNA OS DADOS
     return $PDOStatement->execute();
 }
+
+function ordenaNoticia(){
+    # PREPARA A QUERY
+    $PDOStatement = $GLOBALS['pdo']->query("SELECT * FROM noticias ORDER BY id DESC");
+
+    # ININIA ARRAY DE NOTICIAS
+    $noticias = [];
+
+    # PERCORRE TODAS AS LINHAS TRAZENDO OS DADOS
+    while ($listaDeNoticias = $PDOStatement->fetch()) {
+        $noticias[] = $listaDeNoticias;
+    }
+
+
+    return $noticias;
+}

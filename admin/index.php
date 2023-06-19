@@ -9,7 +9,7 @@ require_once __DIR__ . '/../src/middleware/middleware-administrador.php';
 $utilizadores = lerTodosUtilizadores();
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
-$titulo = ' - Painel de Administração';
+$titulo = ' - Utilizadores';
 require_once __DIR__ . '/templates/cabecalho.php';
 ?>
 

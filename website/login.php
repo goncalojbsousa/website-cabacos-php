@@ -27,7 +27,7 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
       </section>
       <div class="container">
         <form class="form" action="/src/controlador/website/controlar-autenticacao.php" method="post">
-          <h1 class="h3 mb-3 fw-normal">Login</h1>
+          <h3 class="h3 mb-3 fw-normal text-center">Login</h3>
           <div class="form-floating mb-2">
             <input type="email" class="form-control" id="Email" placeholder="Email" name="email" maxlength="255" value="<?= isset($_REQUEST['email']) ? $_REQUEST['email'] : null ?>">
             <label for="Email">Endereço de Email</label>
@@ -37,7 +37,7 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
             <label for="palavra_passe">Palavra Passe</label>
           </div>
           <div class="checkbox mb-3">
-            <label><input type="checkbox" value="lembra-me">Lembrar-me</label>
+            <label class="text-white"><input type="checkbox" value="lembra-me">Lembrar-me</label>
           </div>
           <button class="w-100 btn btn-lg btn-success mb-2" type="submit" name="utilizador" value="login">Entrar</button>
         </form>

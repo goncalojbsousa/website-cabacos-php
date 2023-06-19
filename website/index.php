@@ -2,6 +2,12 @@
 # CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES AUTENTICADOS ACESSEM ESTE SITIO
 require_once __DIR__ . '/../src/middleware/middleware-utilizador.php';
 
+# INICIALIZA O REPOSITÓRIO DE NOTICIAS
+require_once __DIR__ . '/../src/infraestrutura/basededados/repositorio-noticias.php';
+
+#ORDENA POR NOTICIAS MAIS RECENTES
+$noticias = ordenaNoticia();
+
 # CARREGA O CABECALHO GERAL
 $titulo = ' - Início';
 require_once __DIR__ . '/templates/cabecalho_geral.php';
@@ -66,54 +72,29 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 			</p>
 		</div>
 
-		<!--noticias // eventos
-		as noticias tao dentro de um grid para organizar por colunas
-		-->
+		<!--noticias // eventos-->
 		<hr>
+
 		<div class="container text-center">
 			<div class="row">
-				<div class="col">
-					<div class="card text-bg-dark" style="width: 18rem;">
-						<img src="/recursos/img/news/irs22.jpg" class="card-img-top" alt="imagem sobre a noticia">
-						<div class="card-body">
-							<h5 class="card-title">Tudo sobre a entrega do IRS 2022</h5>
-							<p class="card-text">Informações sobre a entrega do IRS.</p>
-							<a href="noticias.html#irs" class="btn btn-primary">Veja mais!</a>
+				<?php $count = 0; ?>
+				<?php foreach ($noticias as $noticia): ?>
+					<?php if ($count < 4): ?>
+						<div class="col">
+							<div class="card text-bg-dark" style="width: 18rem;">
+								<img src="<?= $noticia['foto']; ?>" class="card-img-top" alt="imagem sobre a noticia" width="200" height="200">
+								<div class="card-body">
+									<h5 class="card-title"><?= $noticia['titulo']; ?></h5>
+									<p class="card-text"><?= substr($noticia['texto'], 0, 100) . '...'; ?></p>
+									<a href="noticias.php#<?= $noticia['id']; ?>" class="btn btn-primary">Veja mais!</a>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card text-bg-dark" style="width: 18rem;">
-						<img src="/recursos/img/news/etap_small.png" class="card-img-top" alt="imagem sobre a noticia">
-						<div class="card-body">
-							<h5 class="card-title">Centro Qualifica da COOPETAPE/ETAP</h5>
-							<p class="card-text">Processo formativo da COOPETAPE/ETAP.</p>
-							<a href="noticias.html#etap" class="btn btn-primary">Veja mais!</a>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card text-bg-dark" style="width: 18rem;">
-						<img src="/recursos/img/news/fpf_small.png" class="card-img-top" alt="imagem sobre a noticia">
-						<div class="card-body">
-							<h5 class="card-title">Formação profissional financiada</h5>
-							<p class="card-text">Formações modulares certificadas realizadas no edifício da Junta.</p>
-							<a href="noticias.html#fpf" class="btn btn-primary">Veja mais!</a>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card text-bg-dark" style="width: 18rem;">
-						<img src="/recursos/img/news/aulas_small.png" class="card-img-top" alt="imagem sobre a noticia">
-						<div class="card-body">
-							<h5 class="card-title">Aulas de ginástica para a população sénior</h5>
-							<p class="card-text">Aulas de atividade física gratuitas para a população sénior.</p>
-							<a href="noticias.html#aulas" class="btn btn-primary">Veja mais!</a>
-						</div>
-					</div>
-				</div>
+					<?php endif; ?>
+					<?php $count++; ?>
+				<?php endforeach; ?>
 			</div>
-		</div>	
+		</div>
 
 		<!--localizaçao no googlemaps-->
 		<hr>
