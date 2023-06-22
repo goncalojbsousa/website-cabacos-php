@@ -44,10 +44,10 @@ require_once __DIR__ . '/templates/cabecalho.php';
         <span class="input-group-text">Texto</span>
         <input type="text" class="form-control" name="texto" maxlength="2000" size="2000" value="<?= isset($_REQUEST['texto']) ? $_REQUEST['texto'] : null ?>" required>
       </div>
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupFile01">Foto</label>
-        <input accept="image/*" type="file" class="form-control" id="inputGroupFile01" name="foto" />
-      </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Foto</label>
+          <input accept="image/*" type="file" class="form-control" id="inputGroupFile01" name="foto" />
+        </div>
       </div>
       <div class="d-grid col-4 mx-auto">
         <input type="hidden" name="id" value="<?= isset($_REQUEST['id']) ? $_REQUEST['id'] : null ?>">
