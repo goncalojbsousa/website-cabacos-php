@@ -76,7 +76,7 @@ function lerTodasNoticias()
 }
 
 /**
- * FUNÇÃO RESPONSAVEL POR ATUALIZAR OS DADOS DE UM UTILIZADOR NO SISTEMA
+ * FUNÇÃO RESPONSAVEL POR ATUALIZAR OS DADOS DE UMA NOTICIA NO SISTEMA
  */
 function atualizarNoticia($noticia)
 {
@@ -92,6 +92,7 @@ function atualizarNoticia($noticia)
 
         # EXECUTA A QUERY RETORNANDO VERDADEIRO SE CRIAÇÃO FOI FEITA
         return $PDOStatement->execute([
+            ':id' => $noticia['id'],
             ':titulo' => $noticia['titulo'],
             ':texto' => $noticia['texto'],
             ':foto' => $noticia['foto']

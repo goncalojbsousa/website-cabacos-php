@@ -16,10 +16,10 @@ require_once __DIR__ . '/templates/cabecalho.php';
 <main class="bg-light">
   <section class="py-4">
     <div class="d-flex justify-content">
-      <a href="/admin/utilizador.php"><button class="btn btn-success px-4 me-2">Criar Utilizador</button></a>
-      <a href="/website/"><button class="btn btn-info px-2 me-2">Sair Administração</button></a>
+      <a href="/admin/utilizador.php"><button class="btn btn-success px-4 me-2">Criar um Utilizador</button></a>
+      <a href="/website/"><button class="btn btn-info px-2 me-2">Sair da Administração</button></a>
       <form action="/src/controlador/website/controlar-autenticacao.php" method="post">
-        <button class="btn btn-danger px-4" type="submit" name="utilizador" value="logout">Fazer Logout</button>
+        <button class="btn btn-danger px-4" type="submit" name="utilizador" value="logout">Logout</button>
       </form>
     </div>
   </section>
@@ -27,7 +27,7 @@ require_once __DIR__ . '/templates/cabecalho.php';
     <?php
     # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
     if (isset($_SESSION['sucesso'])) {
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+      echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
       echo $_SESSION['sucesso'] . '<br>';
       echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
       unset($_SESSION['sucesso']);
@@ -71,7 +71,7 @@ require_once __DIR__ . '/templates/cabecalho.php';
               <td>
                 <div class="d-flex justify-content">
                   <a href="/src/controlador/admin/controlar-utilizador.php?<?= 'utilizador=atualizar&id=' . $utilizador['id'] ?>"><button type="button" class="btn btn-primary me-2">Atualizar</button></a>
-                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deletar<?= $utilizador['id'] ?>">Deletar</button>
+                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deletar<?= $utilizador['id'] ?>">Eliminar</button>
                 </div>
               </td>
             </tr>
@@ -80,11 +80,11 @@ require_once __DIR__ . '/templates/cabecalho.php';
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar Utilizador</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Utilizador</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    Esta operação não poderá ser desfeita. Tem certeza que deseja deletar este utilizador?
+                    Esta operação não poderá ser revertida. Tem certeza que deseja eliminar este utilizador?
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

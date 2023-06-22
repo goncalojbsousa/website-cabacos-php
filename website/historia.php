@@ -6,7 +6,7 @@ require_once __DIR__ . '/../src/middleware/middleware-utilizador.php';
 $titulo = ' - Historia';
 require_once __DIR__ . '/templates/cabecalho_geral.php';
 ?>
-<body>
+
 	<content tabindex="0" onclick="closeSidebar()" id="content">
 	
 		<!--conteudo da pagina-->

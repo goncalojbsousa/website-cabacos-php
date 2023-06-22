@@ -7,14 +7,13 @@ $titulo = '- Registro';
 include_once __DIR__ . '/templates/cabecalho_geral.php';
 ?>
 
-<body>
   <div>
     <main>
       <section>
         <?php
         # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
         if (isset($_SESSION['sucesso'])) {
-          echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+          echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
           echo $_SESSION['sucesso'] . '<br>';
           echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
           unset($_SESSION['sucesso']);
@@ -41,11 +40,11 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
             <label for="floatingInput">Endereço de Email:</label>
           </div>
           <div class="form-floating mb-2">
-            <input type="password" class="form-control" id="palavra_passe" name="palavra_passe" placeholder="Palavra passe">
+            <input type="password" class="form-control" id="palavra_passe" name="palavra_passe" minlength="6" placeholder="Palavra passe">
             <label for="palavra_passe">Palavra Passe:</label>
           </div>
           <div class="form-floating mb-2">
-            <input type="password" class="form-control" id="confirmar_palavra_passe" name="confirmar_palavra_passe" placeholder="Confirmar palavra passe">
+            <input type="password" class="form-control" id="confirmar_palavra_passe" name="confirmar_palavra_passe" minlength="6" placeholder="Confirmar palavra passe">
             <label for="confirmar_palavra_passe">Confirmar Palavra Passe:</label>
           </div>
           <button class="w-100 btn btn-lg btn-success mb-2" type="submit" name="utilizador" value="registo">Registar</button>

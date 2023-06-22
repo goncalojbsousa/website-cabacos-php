@@ -76,7 +76,7 @@ if (isset($_GET['utilizador'])) {
         if ($utilizador['dono']) {
 
             # DEFINE MENSAGEM ESPECÍFICA DE ERRO E RETORNO PARA PAINEL DE ADM
-            $_SESSION['erros'] = ['Este utilizador é proprietário do sistema e não pode ser apagado.'];
+            $_SESSION['erros'] = ['Este utilizador é proprietário do sistema e não pode ser eliminado.'];
 
             # REDIRECIONA UTILIZADOR COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
             header('location: /../admin');
@@ -91,7 +91,7 @@ if (isset($_GET['utilizador'])) {
         # REDIRECIONA UTILIZADOR PARA PÁGINA ADMIN COM MENSAGEM DE SUCCESO
         if ($sucesso) {
             # DEFINE MENSAGEM DE SUCESSO
-            $_SESSION['sucesso'] = 'Utilizador deletado com sucesso!';
+            $_SESSION['sucesso'] = 'Utilizador eliminado com sucesso!';
 
             # REDIRECIONA UTILIZADOR COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
             header('location: /../admin/');
@@ -294,7 +294,7 @@ function alterarPalavraPasse($requisicao)
         if ($sucesso) {
 
             # DEFINE MENSAGEM DE SUCESSO
-            $_SESSION['sucesso'] = 'Palavra passe alterada com sucesso!';
+            $_SESSION['sucesso'] = 'Palavra-passe alterada com sucesso!';
 
             # REDIRECIONA UTILIZADOR COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
             header('location: /../website/palavra-passe.php');

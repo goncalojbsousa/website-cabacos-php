@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../src/middleware/middleware-utilizador.php';
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
-$titulo = ' - Perfil';
+$titulo = ' - Alterar Perfil';
 include_once __DIR__ . '/templates/cabecalho_geral.php';
 
 # ACESSA DE FUNÇÕES AUXILIADORAS. 
@@ -12,18 +12,12 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
 $utilizador = utilizador();
 ?>
 
-<body class="">
   <div class="pt-1">
-    <div class="pt-4 mb-2 text-center text-white">
-      <h1>Alterar perfil</h1>
-      <p>Edite o seu perfil ao seu gosto.</p>
-    </div>
-    <main>
-      <section>
+    <section>
         <?php
         # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
         if (isset($_SESSION['sucesso'])) {
-          echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+          echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
           echo $_SESSION['sucesso'] . '<br>';
           echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
           unset($_SESSION['sucesso']);
@@ -38,6 +32,11 @@ $utilizador = utilizador();
         }
         ?>
       </section>
+    <div class="pt-4 mb-2 text-center text-white">
+      <h1>Alterar perfil</h1>
+      <p>Edite o seu perfil ao seu gosto.</p>
+    </div>
+    <main>
       <section class="container">
         <form enctype="multipart/form-data" action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form2 form-control py-3">
           <div class="input-group mb-3">

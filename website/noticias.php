@@ -10,7 +10,6 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 $noticias = ordenaNoticia();
 ?>
 
-<body>	
 	<content tabindex="0" onclick="closeSidebar()" id="content">
 		<h1 class="titulo">
 			Noticias mais recentes
@@ -19,7 +18,7 @@ $noticias = ordenaNoticia();
 		<!-- FOREACH PARA RODAR E APRESENTAR TODAS AS NOTICIAS-->
 		<div class="wrapper">
 			<?php foreach($noticias as $noticia): ?>
-				<div class="" id="<?= $noticia['id']; ?>">
+				<div id="<?= $noticia['id']; ?>">
 					<?php echo '<img class="pb-3 pe-3" src="' . $noticia['foto'] . '" alt="" align="left" width="300" height="200">';?>
 					<h3><?= $noticia['titulo']; ?></h3>
 					<p><?= $noticia['texto']; ?></p>

@@ -16,18 +16,18 @@ require_once __DIR__ . '/templates/cabecalho.php';
 <main class="bg-light">
   <section class="py-4">
     <div class="d-flex justify-content">
-      <a href="/admin/noticia.php"><button class="btn btn-success px-4 me-2">Criar Noticia</button></a>
-      <a href="/website/"><button class="btn btn-info px-2 me-2">Sair Administração</button></a>
+      <a href="/admin/noticia.php"><button class="btn btn-success px-4 me-2">Criar uma Noticia</button></a>
+      <a href="/website/"><button class="btn btn-info px-2 me-2">Sair da Administração</button></a>
       <form action="/src/controlador/website/controlar-autenticacao.php" method="post">
-        <button class="btn btn-danger px-4" type="submit" name="noticia" value="logout">Fazer Logout</button>
+        <button class="btn btn-danger px-4" type="submit" name="utilizador" value="logout">Logout</button>
       </form>
     </div>
   </section>
   <section>   
     <?php
-    # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
+    # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-NOTICIAS
     if (isset($_SESSION['sucesso'])) {
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+      echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
       echo $_SESSION['sucesso'] . '<br>';
       echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
       unset($_SESSION['sucesso']);
@@ -48,13 +48,13 @@ require_once __DIR__ . '/templates/cabecalho.php';
         <thead class="table-secondary">
           <tr>
             <th scope="col">Titulo</th>
-            <th scope="col">Texto</th>
+            <th scope="col">Conteudo</th>
             <th scope="col">Gerenciar</th>
           </tr>
         </thead>
         <tbody>
           <?php
-          # VARRE TODOS OS UTILIZADORES PARA CONSTRUÇÃO DA TABELA
+          # VARRE TODAS AS NOTICIAS PARA CONSTRUÇÃO DA TABELA
           foreach ($noticias as $noticia) {
           ?>
             <tr>
@@ -63,7 +63,7 @@ require_once __DIR__ . '/templates/cabecalho.php';
               <td>
                 <div class="d-flex justify-content">
                   <a href="/src/controlador/admin/controlar-noticias.php?<?= 'noticia=atualizar&id=' . $noticia['id'] ?>"><button type="button" class="btn btn-primary me-2">Atualizar</button></a>
-                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deletar<?= $noticia['id'] ?>">Deletar</button>
+                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deletar<?= $noticia['id'] ?>">Eliminar</button>
                 </div>
               </td>
             </tr>
@@ -72,11 +72,11 @@ require_once __DIR__ . '/templates/cabecalho.php';
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar Noticia</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Noticia</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    Esta operação não poderá ser desfeita. Tem certeza que deseja deletar esta noticia?
+                    Esta operação não poderá ser desfeita. Tem certeza que deseja eliminar esta noticia?
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

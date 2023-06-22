@@ -1,7 +1,6 @@
 <?php
 # CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES AUTENTICADOS ACESSEM ESTE SITIO
-require_once(realpath(dirname(__FILE__) . '\..\src\middleware\middleware-utilizador.php'));
-
+require_once __DIR__ . '/../src/middleware/middleware-utilizador.php';
 
 # CARREGA O CABECALHO PADRÃO COM O TÍTULO
 $titulo = ' - Altarar Palavra Passe';
@@ -15,18 +14,12 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
 $utilizador = utilizador();
 ?>
 
-<body>
-  <div class="">
-    <div class="pt-4 mb-2 text-center text-white">
-      <h1>Alterar palavra-passe</h1>
-      <p>Altere a sua palavra-passe para uma do seu agrado.</p>
-    </div>
-    <main>
-      <section>
+  <div>
+    <section>
         <?php
         # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
         if (isset($_SESSION['sucesso'])) {
-          echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+          echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
           echo $_SESSION['sucesso'] . '<br>';
           echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
           unset($_SESSION['sucesso']);
@@ -41,6 +34,11 @@ $utilizador = utilizador();
         }
         ?>
       </section>
+    <div class="pt-4 mb-2 text-center text-white">
+      <h1>Alterar palavra-passe</h1>
+      <p>Altere a sua palavra-passe para uma do seu agrado.</p>
+    </div>
+    <main>
       <section class="container">
         <form action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form2 form-control py-3">
           <div class="input-group mb-3">

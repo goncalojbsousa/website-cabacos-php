@@ -9,8 +9,7 @@ $titulo = ' - Login';
 include_once __DIR__ . '/templates/cabecalho_geral.php';
 ?>
 
-<body class="">
-  <div class="w">
+  <div>
     <main>
       <section >
         <?php

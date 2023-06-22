@@ -32,7 +32,7 @@ function utilizadorValido($requisicao)
 
     # VALIDANDO O CAMPO EMAIL
     if (!filter_var($requisicao['email'], FILTER_VALIDATE_EMAIL)) {
-        $erros['email'] = 'O campo Email não pode estar vazio e deve ter o formato de email, a exemplo de: nome@dominio.pt.';
+        $erros['email'] = 'O campo Email não pode estar vazio e deve ter o formato de email, por exemplo: nome@dominio.pt.';
     }
 
     # VALIDANDO FOTO DE PERFIL

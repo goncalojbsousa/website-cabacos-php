@@ -1,7 +1,6 @@
 <?php
-
 /**
- * FUNÇÃO RESPONSÁVEL PELA VALIDAÇÃO DE UM UTILIZADOR
+ * FUNÇÃO RESPONSÁVEL PELA VALIDAÇÃO DE UMA NOTICIA
  */
 function noticiaValida($requisicao)
 {
@@ -42,17 +41,17 @@ function noticiaValida($requisicao)
 
         # VERIFICA SE A LARGURA DA IMAGEM É MAIOR QUE A DEFINIDA
         if ($dimensoes[0] > $largura) {
-            $erros['foto_largura'] = "A largura da foto não deve ultrapassar " . $largura . " pixels";
+            $erros['foto_largura'] = "A largura da foto não deve ultrapassar " . $largura . " pixels.";
         }
 
         # VERIFICA SE A ALTURA DA IMAGEM É MAIOR QUE A ALTURA PERMITIDA
         if ($dimensoes[1] > $altura) {
-            $erros['foto_altura'] = "A altura da foto não deve ultrapassar " . $altura . " pixels";
+            $erros['foto_altura'] = "A altura da foto não deve ultrapassar " . $altura . " pixels.";
         }
 
         # VERIFICA SE O TAMANHO DA IMAGEM É MAIOR QUE O TAMANHO EM PIXEL PERMITIDO
         if ($_FILES['foto']["size"] > $tamanho) {
-            $erros['foto_bytes'] = "A foto deve ter no máximo 1 Mb";
+            $erros['foto_bytes'] = "A foto deve ter no máximo 1 Mb.";
         }
     }
 

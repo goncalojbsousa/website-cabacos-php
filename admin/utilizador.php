@@ -18,7 +18,7 @@ require_once __DIR__ . '/templates/cabecalho.php';
     <?php
     # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-UTILIZADOR
     if (isset($_SESSION['sucesso'])) {
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+      echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
       echo $_SESSION['sucesso'] . '<br>';
       echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
       unset($_SESSION['sucesso']);

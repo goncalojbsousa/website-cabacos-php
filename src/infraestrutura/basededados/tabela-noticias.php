@@ -22,7 +22,7 @@ $pdo->exec(
 
 echo 'Tabela noticias criada!' . PHP_EOL;
 
-# ABAIXO UM ARRAY SIMULANDO A DADOS DE UM UTILIZADOR 
+# ABAIXO UM ARRAY SIMULANDO A DADOS DE UMA NOTICIA 
 $noticia = [
     'titulo' => 'Evento Caetano Auto Rally Experience Ponte de Lima - Restrições ao trânsito',
     'texto' => 'A Junta de Freguesia de Cabaços e Fojo Lobal informa que nos dias 30 de setembro, 1 e 2 de outubro de 2022 devido a realização do evento Caetano Auto Rally Experience Ponte de Lima na nossa freguesia, irão haver restrições ao trânsito na Rua de Além das 9h00 às 13h00 e de 14h00 às 18h00. Durante este horário a rua vai estar cortada ao trânsito pelas autoridades, desta forma aconselhamos a quem necessite circular nesta via que tente encontrar alternativa.',

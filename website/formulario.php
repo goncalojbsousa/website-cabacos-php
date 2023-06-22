@@ -7,7 +7,6 @@ $titulo = ' - Formulario';
 require_once __DIR__ . '/templates/cabecalho_geral.php';
 ?>
 
-<body>
 	<!--conteudo da pagina-->
 	<content tabindex="0" onclick="closeSidebar()" id="content">
 		<div class="container">

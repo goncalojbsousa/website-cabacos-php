@@ -13,20 +13,20 @@ require_once __DIR__ . '/../../auxiliadores/auxiliador.php';
 ##############
 
 # VERBOS POST
-## CONTROLA A ROTA PARA CRIAÇÃO E ATUALIZAÇÃO DE UM UTILIZADOR NA PÁGINA UTILIZADOR
+## CONTROLA A ROTA PARA CRIAÇÃO E ATUALIZAÇÃO DE UMA NOTICIA NA PÁGINA NOTICIA
 if (isset($_POST['noticia'])) {
 
-    ## CONTROLA A CRIAÇÃO DE NOVOS UTILIZADORES
+    ## CONTROLA A CRIAÇÃO DE NOVAS NOTICIAS
     if ($_POST['noticia'] == 'criar') {
 
-        # CRIA UM UTILIZADOR
+        # CRIA UMA NOTICIA
         criar($_POST);
     }
 
-    ## CONTROLA A ATUALIZAÇÃO DE DADOS DOS UTILIZADORES
+    ## CONTROLA A ATUALIZAÇÃO DE DADOS DAS NOTICIAS
     if ($_POST['noticia'] == 'atualizar') {
 
-        # ATUALIZA UM UTILIZADOR
+        # ATUALIZA UMA NOTICIA
         atualizar($_POST);
     }
 }
@@ -38,14 +38,14 @@ if (isset($_GET['noticia'])) {
     ## CONTROLA A ROTA PARA A CRIAÇÃO DE NOVAS NOTICIAS
     if ($_GET['noticia'] == 'atualizar') {
 
-        # RECUPERA DADOS DO UTILIZADOR PELO ID RECEBIDO
+        # RECUPERA DADOS DA NOTICIA PELO ID RECEBIDO
         $noticia = lerNoticia($_GET['id']);
 
-        # CRIA A SESSÃO AÇÃO ATUALIZAR PARA MANIPULAR O BOTÃO DE ENVIO DO FORMULÁRIO UTILIZADOR
-        # ESSA ESTRATÉGIA FOI EXPLICADO NO FICHEIRO UTILIZADOR.PHP
+        # CRIA A SESSÃO AÇÃO ATUALIZAR PARA MANIPULAR O BOTÃO DE ENVIO DO FORMULÁRIO NOTICIA
+        # ESSA ESTRATÉGIA FOI EXPLICADO NO FICHEIRO NOTICIA.PHP
         $noticia['acao'] = 'atualizar';
 
-        # ENVIA PARÂMETROS COM DADOS DO UTILIZADOR PARA A PÁGINA UTILIZADOR RECUPERAR DADOS PARA MANIPULAR A ALTERAÇÃO
+        # ENVIA PARÂMETROS COM DADOS DA NOTICIAS PARA A PÁGINA NOTICIAS RECUPERAR DADOS PARA MANIPULAR A ALTERAÇÃO
         $params = '?' . http_build_query($noticia);
 
         header('location: /../admin/noticia.php' . $params);
@@ -54,16 +54,16 @@ if (isset($_GET['noticia'])) {
     ## CONTROLA A ROTA PARA A EXCLUSÃO DE NOTICIAS
     if ($_GET['noticia'] == 'deletar') {
 
-        # RECUPERA DADOS DO UTILIZADOR
+        # RECUPERA DADOS DA NOTICIA
         $noticia = lerNoticia($_GET['id']);
 
-        # DELETA UTILIZADOR
+        # ELIMINA NOTICIA
         $sucesso = deletar($noticia);
 
-        # REDIRECIONA UTILIZADOR PARA PÁGINA ADMIN COM MENSAGEM DE SUCCESO
+        # REDIRECIONA NOTICIA PARA PÁGINA ADMIN COM MENSAGEM DE SUCCESO
         if ($sucesso) {
             # DEFINE MENSAGEM DE SUCESSO
-            $_SESSION['sucesso'] = 'Noticia deletadA com sucesso!';
+            $_SESSION['sucesso'] = 'Noticia eliminada com sucesso!';
 
             # REDIRECIONA UTILIZADOR COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
             header('location: /../admin/index2.php');
@@ -76,17 +76,17 @@ if (isset($_GET['noticia'])) {
 ###############
 
 /**
- * FUNÇÃO RESPONSÁVEL POR CRIAR UM NOVO UTILIZADOR
+ * FUNÇÃO RESPONSÁVEL POR CRIAR UMA NOVA NOTICIA
  */
 function criar($requisicao)
 {
-    # VALIDA DADOS DO UTILIZADOR. FICHEIRO VALIDAÇÃO->APLICAÇAO->ADMIN->VALIDAR-UTILIZADOR.PHP
+    # VALIDA DADOS DA NOTICIA. FICHEIRO VALIDAÇÃO->APLICAÇAO->ADMIN->VALIDAR-NOTICIA.PHP
     $dados = noticiaValida($requisicao);
 
     # VERIFICA SE EXISTEM ERROS DE VALIDAÇÃO
     if (isset($dados['invalido'])) {
 
-        # RECUPERA MENSAGEM DE ERRO, CASO EXISTA, E COLOCA EM SESSÃO PARA RECUPERANÃO NO FORMULARIO UTILIZADOR
+        # RECUPERA MENSAGEM DE ERRO, CASO EXISTA, E COLOCA EM SESSÃO PARA RECUPERANÃO NO FORMULARIO NOTICIA
         $_SESSION['erros'] = $dados['invalido'];
 
         # RECUPERA DADOS DO FORMULÁRIO PARA RECUPERAR PREENCHIMENTO ANTERIOR
@@ -101,14 +101,14 @@ function criar($requisicao)
     # GARDA FOTO EM DIRETÓRIO LOCAL (FUNÇÃO LOCAL)
     $dados = guardaFoto($dados);
 
-    # GUARDA UTILIZADOR NA BASE DE DADOS (REPOSITÓRIO PDO)
+    # GUARDA NOTICIA NA BASE DE DADOS (REPOSITÓRIO PDO)
     $sucesso = criarNoticia($dados);
 
     # REDIRECIONA UTILIZADOR PARA PÁGINA DE REGISTO COM MENSAGEM DE SUCCESO
     if ($sucesso) {
 
         # DEFINE MENSAGEM DE SUCESSO
-        $_SESSION['sucesso'] = 'Noticia criado com sucesso!';
+        $_SESSION['sucesso'] = 'Noticia criada com sucesso!';
 
         # REDIRECIONA O UTILIZADO PARA A PÁGINA ADMIN
         header('location: /../admin/index2.php');
@@ -116,11 +116,11 @@ function criar($requisicao)
 }
 
 /**
- * FUNÇÃO RESPONSÁVEL POR ATUALIZAR UM UTILIZADOR
+ * FUNÇÃO RESPONSÁVEL POR ATUALIZAR UMA NOTICIA
  */
 function atualizar($requisicao)
 {
-    # VALIDA DADOS DO UTILIZADOR
+    # VALIDA DADOS DA NOTICIA
     $dados = noticiaValida($requisicao);
 
     # VERIFICA SE EXISTEM ERROS DE VALIDAÇÃO
@@ -129,19 +129,19 @@ function atualizar($requisicao)
         # RECUPERA MENSAGEM DE ERRO, CASO EXISTA
         $_SESSION['erros'] = $dados['invalido'];
 
-        # CRIA A SESSÃO AÇÃO ATUALIZAR PARA MANIPULAR O BOTÃO DE ENVIO DO FORMULÁRIO UTILIZADOR
+        # CRIA A SESSÃO AÇÃO ATUALIZAR PARA MANIPULAR O BOTÃO DE ENVIO DO FORMULÁRIO NOTICIAS
         $_SESSION['acao'] = 'atualizar';
 
         # RECUPERA DADOS DO FORMULÁRIO PARA RECUPERAR PREENCHIMENTO ANTERIOR
         $params = '?' . http_build_query($requisicao);
 
-        # REDIRECIONA UTILIZADOR COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
+        # REDIRECIONA NOTICIAS COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
         header('location: /../admin/noticia.php' . $params);
 
         return false;
     }
 
-    # RECUPERA DADOS DO UTILIZADOR
+    # RECUPERA DADOS DA NOTICIA
     $noticia = lerNoticia($dados['id']);
 
     # GARDA FOTO EM DIRETÓRIO LOCAL E APAGA A FOTO ANTIGA ORIUNDA DA REQUISIÇÃO (FUNÇÃO LOCAL)
@@ -149,14 +149,14 @@ function atualizar($requisicao)
         $dados = guardaFoto($dados, $requisicao);
     }
 
-    # ATUALIZA UTILIZADOR (REPOSITÓRIO PDO)
+    # ATUALIZA NOTICIAS (REPOSITÓRIO PDO)
     $sucesso = atualizarNoticia($dados);
 
-    # REDIRECIONA UTILIZADOR PARA PÁGINA DE ALTERAÇÃO COM MENSAGEM DE SUCCESO
+    # REDIRECIONA NOTICIAS PARA PÁGINA DE ALTERAÇÃO COM MENSAGEM DE SUCCESO
     if ($sucesso) {
 
         # DEFINE MENSAGEM DE SUCESSO
-        $_SESSION['sucesso'] = 'Noticia alterado com sucesso!';
+        $_SESSION['sucesso'] = 'Noticia alterada com sucesso!';
 
         # DEFINI BOTÃO DE ENVIO DO FORMULÁRIO
         $dados['acao'] = 'atualizar';
@@ -164,20 +164,20 @@ function atualizar($requisicao)
         # RECUPERA DADOS DO FORMULÁRIO PARA RECUPERAR PREENCHIMENTO ANTERIOR
         $params = '?' . http_build_query($dados);
 
-        # REDIRECIONA UTILIZADOR COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
+        # REDIRECIONA NOTICIAS COM DADOS DO FORMULÁRIO ANTERIORMENTE PREENCHIDO
         header('location: /../admin/noticia.php' . $params);
     }
 }
 
 /**
- * FUNÇÃO RESPONSÁVEL POR DELETAR UM UTILIZADOR
+ * FUNÇÃO RESPONSÁVEL POR DELETAR UM NOTICIAS
  */
 function deletar($noticia)
 {
     # DEFINE O CAMINHO DO FICHEIRO
-    $caminhoFicheiro = __DIR__ . '/../../../recursos/imagens/uploads/';
+    $caminhoFicheiro = __DIR__ . '/../../../recursos/img/news/uploads/';
 
-    # VALIDA DADOS DO UTILIZADOR
+    # VALIDA DADOS DO NOTICIAS
     $retorno = deletarNoticia($noticia['id']);
 
     # COMANDO PARA APAGAR O FICHEIRO
