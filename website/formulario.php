@@ -12,9 +12,9 @@ require_once __DIR__ . '/templates/cabecalho_geral.php';
 		<div class="container">
 			<form class="form" onsubmit="sendEmail(); reset(); return false;">
 				<h3>Formulario de pedido</h3>
-				<input type="text" id="name" placeholder="Seu nome" required>
+				<input type="text" id="name" placeholder="Seu nome" maxlength="255" size="255" required>
 				<input type="email" id="email" placeholder="Insira o seu e-mail" required>
-				<input type="text" id="phone" placeholder="Insira o seu numero de telemovel" required>
+				<input type="text" id="phone" placeholder="Insira o seu numero de telemovel" maxlength="9" required>
 				<textarea id="mensagem" rows="5" placeholder="Como podemos ajudar?"></textarea>
 				<button type="submit">Enviar</button>
 			</form>

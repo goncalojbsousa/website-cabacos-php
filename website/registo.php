@@ -32,7 +32,7 @@ include_once __DIR__ . '/templates/cabecalho_geral.php';
         <form class="form" action="/src/controlador/website/controlar-registo.php" method="post">
           <h3 class="h3 mb-3 fw-normal text-center">Registro</h3>
           <div class="form-floating mb-2">
-            <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
+            <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="255" size="255" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null ?>" required>
             <label for="nome">Nome:</label>
           </div>
           <div class="form-floating mb-2">

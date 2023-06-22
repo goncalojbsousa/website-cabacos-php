@@ -41,11 +41,11 @@ $utilizador = utilizador();
         <form enctype="multipart/form-data" action="/src/controlador/admin/controlar-utilizador.php" method="post" class="form2 form-control py-3">
           <div class="input-group mb-3">
             <span class="input-group-text">Nome</span>
-            <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="100" size="100" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : $utilizador['nome'] ?>" required>
+            <input type="text" class="form-control" name="nome" placeholder="nome" maxlength="255" size="255" value="<?= isset($_REQUEST['nome']) ? $_REQUEST['nome'] : $utilizador['nome'] ?>" required>
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text">Apelido</span>
-            <input type="text" class="form-control" name="apelido" maxlength="100" size="100" value="<?= isset($_REQUEST['apelido']) ? $_REQUEST['apelido'] : $utilizador['apelido'] ?>" required>
+            <input type="text" class="form-control" name="apelido" maxlength="255" size="255" value="<?= isset($_REQUEST['apelido']) ? $_REQUEST['apelido'] : $utilizador['apelido'] ?>" required>
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text">NIF</span>

@@ -1,4 +1,7 @@
 <?php
+# CARREGA MIDDLEWARE PAGARA GARANTIR QUE APENAS UTILIZADORES AUTENTICADOS ACESSEM ESTE SITIO
+require_once __DIR__ . '/../src/middleware/middleware-utilizador.php';
+
 # INICIALIZA O REPOSITÓRIO DE NOTICIAS
 require_once __DIR__ . '/../src/infraestrutura/basededados/repositorio-noticias.php';
 
