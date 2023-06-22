@@ -16,7 +16,6 @@ require_once __DIR__ . '/templates/cabecalho.php';
   </section>
   <section>
     <?php
-
     # MOSTRA AS MENSAGENS DE SUCESSO E DE ERRO VINDA DO CONTROLADOR-NOTICIAS
     if (isset($_SESSION['sucesso'])) {
       echo '<div class="alert alert-dark alert-dismissible fade show" role="alert">';
@@ -57,6 +56,7 @@ require_once __DIR__ . '/templates/cabecalho.php';
     </form>
   </section>
 </main>
+
 <?php
 # CARREGA O RODAPE PADRÃO
 require_once __DIR__ . '/templates/rodape.php';
